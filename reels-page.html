@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto slider</title>
+    <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            display: grid;
+            place-items: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .crousel_main_box {
+            width: 100%;
+            height: 100%;
+        }
+
+        .crousel_multi_imgcc {
+            position: relative;
+            width: cover;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .crousel_img_all {
+            position: absolute;
+            width: 100%;
+            height:100%;
+        }
+
+        .crousel_img_all:not(.active) {
+            top:-100%;
+        }
+
+        @keyframes c_next1 {
+            from {
+               top: 0%;
+
+            }
+
+            to {
+               top: -100%;
+            }
+        }
+
+        @keyframes c_next2 {
+            from {
+               top: 100%;
+            }
+
+            to {
+               top: 0%;
+            }
+        }
+
+        /* this is for c_pre*/
+        @keyframes c_pre1 {
+            from {
+               top: 0%;
+
+            }
+
+            to {
+               top: 100%;
+            }
+        }
+
+        @keyframes c_pre2 {
+            from {
+               top: -100%;
+            }
+
+            to {
+               top: 0%;
+            }
+        }
+        .like_follow_box{
+            position: absolute;
+            width: 100%;
+            height: 120px;
+            background-color: rgba(0, 0, 0, 0.532);
+            bottom: 0;
+            z-index: 9;
+            display: flex;
+            justify-content: space-around;
+        }
+        .follow_main_box{
+            place-self: end;
+             width: 280px;
+             height: 100px;
+             text-align: start;
+             padding: 2%;
+        }
+        .follow_box{
+            place-content: start;
+            place-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        .profile_box{
+            cursor:pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+        border: 2px solid rgb(181, 17, 227);
+        }
+        .follow_btn{
+            cursor: pointer;
+            padding: 4px 20px;
+            border-radius: 10px;
+            font-weight:bolder;
+            color: white;
+            background-color: transparent;
+            border:2px solid white;
+        }
+        .follow_btn:active{
+       background-color: black;
+        }
+.vdo_title_box{
+    color: white;
+    font-weight: normal;
+}
+       .like_main_box{
+         place-self: end;
+             width: 80px;
+             height: 100px;
+             text-align: center;
+             display: grid;
+             padding: 2%;
+
+       }
+       .like_box{ 
+        display: grid;
+        height: auto;
+        place-content: center;
+        place-items: center;
+        gap: 5px;
+       }
+       .like_btn{
+        color: white;
+       }
+       .total_like{
+        text-shadow: 1px 1px red;
+        font-weight:600;
+        color: white;
+       }
+        /* btn css styles*/
+      
+    </style>
+</head>
+
+<body>
+    <div class="crousel_main_box">
+        <div class="crousel_multi_imgcc" >
+
+            <div id="active_id"  ontouchstart="move_scroll_start(event)"  ontouchend="move_scroll_end(event)" class="crousel_img_all" style="width: cover; height: 100%; background-color: rgb(0, 0, 0); text-align: center;" >
+                <!--use for like follow box-->
+                <article class="like_follow_box">
+                    <div class="follow_main_box"> 
+                        <div class="follow_box">
+                            <div class="profile_box" style="background-image: url(IMG-20230526-WA0017.jpg);"></div>
+                            <b style="color: white;">Saurabh_rajbhar</b>
+                            <button class="follow_btn">Follow</button>
+                        </div>
+                        <div class="vdo_title_box">
+                        <span class="vdo_title">Dil diya hai jaan bhi denge</span> ...
+                    </div>
+                    </div>
+                    <div class="like_main_box">
+                        <div class="like_box">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-heart-fill like_btn" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                              </svg>
+                              <span class="total_like">129.3k</span>
+                        </div>
+                    </div>
+                </article>
+                <video  src="./modi-dance.mp4" class="vdo_no" style="width: cover; height: 100%;"></video>
+            </div>
+<!--new video start-->
+            <div ontouchstart="move_scroll_start(event)"  ontouchend="move_scroll_end(event)" class="crousel_img_all" style="width: cover; height: 100%; background-color: rgb(0, 0, 0); text-align: center;" >
+                <!--use for like follow box-->
+                <article class="like_follow_box">
+                    <div class="follow_main_box"> 
+                        <div class="follow_box">
+                            <div class="profile_box" style="background-image: url(IMG-20230526-WA0017.jpg);"></div>
+                            <b style="color: white;">Saurabh_rajbhar</b>
+                            <button class="follow_btn">Follow</button>
+                        </div>
+                        <div class="vdo_title_box">
+                        <span class="vdo_title">Dil diya hai jaan bhi denge</span> ...
+                    </div>
+                    </div>
+                    <div class="like_main_box">
+                        <div class="like_box">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-heart-fill like_btn" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                              </svg>
+                              <span class="total_like">129.3k</span>
+                        </div>
+                    </div>
+                </article>
+                <video  src="./modi-dance.mp4" class="vdo_no" style="width: cover; height: 100%;"></video>
+            </div>
+
+            <video ontouchstart="move_scroll_start(event)"  ontouchend="move_scroll_end(event)" class="crousel_img_all vdo_no" src="./modi-dance.mp4"  style="width: cover; height: 100%;">
+            </video>
+            <video ontouchstart="move_scroll_start(event)"  ontouchend="move_scroll_end(event)" class="crousel_img_all vdo_no"  src="./modi-dance.mp4" style="width: cover; height: 100%;"></video>
+            <video  ontouchstart="move_scroll_start(event)"  ontouchend="move_scroll_end(event)" class="crousel_img_all vdo_no"  src="./modi-dance.mp4" style="width: cover; height: 100%;"></video>
+            <video  ontouchstart="move_scroll_start(event)"  ontouchend="move_scroll_end(event)" class="crousel_img_all vdo_no"  src="./modi-dance.mp4" style="width: cover; height: 100%;"></video>
+        </div>
+        </div>
+        <!--start javascript-->
+    <script>
+       
+        /* this is use for variables*/
+        var multi_imgcc = document.querySelectorAll(".crousel_img_all");
+        var active_id=document.getElementById("active_id");
+        let vdo_no=document.querySelectorAll('.vdo_no');
+        active_id.classList.add("active");
+        vdo_no[0].play();
+           
+        var count = 0;
+        let total_up=0;
+        let total_vdo=vdo_no.length;
+        /*auto slid function*/
+        function c_auto_slid() {
+            multi_imgcc[count].style.animation = 'c_next1 0.3s linear forwards';
+            if (count < multi_imgcc.length - 1) {
+                count++;
+            } else {
+                count = 0;
+            }
+            multi_imgcc[count].style.animation = 'c_next2 0.3s linear forwards';
+        }
+
+        /*this is for c_previouse btn*/
+        function c_pre_slid() {
+            multi_imgcc[count].style.animation = 'c_pre1 0.3s linear forwards';
+            if (count > 0) {
+                count--;
+            } else {
+                count = multi_imgcc.length - 1;
+            }
+            multi_imgcc[count].style.animation = 'c_pre2 0.3s linear forwards';
+
+        }
+        /* mouse hover and mouse leave function use for stop and run auto slider*/
+        /*c_next c_pre function*/
+        function c_next() {
+            c_auto_slid();
+        }
+        function c_pre() {
+            c_pre_slid();
+        }
+
+         /* start slide screen code*/
+        let start_y;
+        let end_y;
+        
+        function move_scroll_start(event) {
+           
+         //  start_y=event.touches[0].clientY;// this is use on move time
+        //    x=Math.trunc(x);
+        start_y=event.changedTouches[event.changedTouches.length-1].pageY;
+           start_y=parseInt(start_y);
+        // alert(start_y);
+        }
+        function move_scroll_end(event) {
+          
+           end_y=event.changedTouches[event.changedTouches.length-1].pageY;
+         end_y=parseInt(end_y);
+         if(start_y>end_y+20){
+            vdo_no[total_up].pause();           
+            total_up++;
+            total_up==total_vdo?total_up=0:total_up;
+            vdo_no[total_up].play();
+           
+            c_auto_slid();
+         }
+         else if(start_y<end_y){
+            vdo_no[total_up].pause();  
+            total_up--;
+            total_up==-1?total_up=total_vdo-1:total_up;
+            vdo_no[total_up].play();
+            c_pre_slid();
+            
+         }
+         
+           
+      
+        //  vdo_no[total_up-1].pause(); 
+        //  if(total_vdo-1==total_up){
+        //     total_up=0;
+        //  }
+        }
+
+function plays(){
+    alert();
+    vdo_no[total_up].play();
+    
+}
+
+    </script>
+</body>
+
+</html>

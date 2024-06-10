@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: cover;
+            height:100%;
+            background-color: orange;
+        }
+        .main-box{
+            background-color: red;
+            height: 100%;
+            width: cover;
+            overflow-x: hidden;
+            place-items: center;
+        }
+        .reels-box{
+            place-content: center;
+            place-items: center;
+            background-color: orange;
+           margin-top: 1px;
+            width:100%;
+            height: 100%;
+            overflow: hidden;
+            position: center;
+            background-color: rgb(112, 112, 13);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-box" onscroll="myFunction()">
+        <!--new-->
+        <div class="reels-box ">
+            <video src="./modi-dance.mp4"></video>
+    </div>
+ <!--new-->
+ <div class="reels-box">
+    <video src="./modi-dance.mp4"></video>
+</div>
+ <!--new-->
+ <div class="reels-box">
+    <video src="./modi-dance.mp4"></video>
+</div>
+ <!--new-->
+ <div class="reels-box">
+    <video src="./modi-dance.mp4"></video>
+</div>
+
+  </div>
+
+  <script type="text/javascript">
+
+var main_box=document.querySelector(".main-box");
+//onscroll 
+var scroll_value= document.main_box.scrollTop;
+function myFunction() {
+    
+alert(scroll_value);
+    if (scroll_value>=50) {
+        alert(scroll_value);
+   main_box.scrollTo(0, 500);
+    }
+}
+
+
+// window.onscroll = function() {myFunction()};
+
+// function myFunction() {
+//   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//     alert("yes");
+//   } else {
+    
+//   }
+// }
+  </script>
+</body>
+</html>

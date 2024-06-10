@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<style>
+    @keyframes scrl {
+        from{
+            top: 0%;
+        }
+        to{
+            transform: translateY(calc(-100% + 400px));
+            transition: 5s ease-out;
+        }
+        
+    }
+
+</style>
+
+<body style="font-size:20px;height:1000px;">
+    <h1 class="h" style="position: fixed; z-index: 100;  color: black;" >d</h1>
+
+    <video class="vdo" src="./modi-dance.mp4"></video> <br>
+    <video class="vdo" src="./modi-dance.mp4"></video> <br>
+    <video class="vdo" src="./modi-dance.mp4"></video> <br>
+    <video class="vdo" src="./modi-dance.mp4"></video> <br>
+    <video class="vdo" src="./modi-dance.mp4"></video> <br>
+<script>
+    
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+    var on=document.documentElement.scrollTop;
+    var body_h= window.innerHeight;
+    on=on%body_h;
+    
+    document.querySelector(".h").innerHTML=on;
+    
+  if (on<=100 && on>=10) {
+   
+  } else {
+    }
+}
+</script>
+
+</body>
+</html>
